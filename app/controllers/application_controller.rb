@@ -8,7 +8,6 @@ class ApplicationController < ActionController::API
   end
 
   rescue_from 'Exceptions::ApiError' do |e|
-    byebug
     render status: e.status, json: { error: e.message }
   end
 end
