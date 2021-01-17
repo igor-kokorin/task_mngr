@@ -9,7 +9,7 @@ class TodoController < ApplicationController
       elsif project_id.present?
         project = Project.find(project_id)
       else
-        raise Exceptions::ApiError.new(400, 'You must pass either project_title of project_id, they should be nonempty')
+        raise Exceptions::ApiError.new(400, 'You must pass either projectTitle of projectId, they should be nonempty')
       end
 
       Todo.create!(
